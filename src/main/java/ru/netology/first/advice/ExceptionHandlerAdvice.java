@@ -9,14 +9,13 @@ import ru.netology.first.exception.UnauthorizedUser;
 
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {
-
     @ExceptionHandler(UnauthorizedUser.class)
-    public ResponseEntity<String> unauthorizedUser(UnauthorizedUser e) {
+    private ResponseEntity<String> unauthorizedUser(UnauthorizedUser e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(InvalidCredentials.class)
-    public ResponseEntity<String> invalidCredentials(InvalidCredentials e) {
+    private ResponseEntity<String> invalidCredentials(InvalidCredentials e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }
