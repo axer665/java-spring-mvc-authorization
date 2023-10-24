@@ -10,6 +10,7 @@ import static ru.netology.first.enumerable.Authorities.*;
 
 @Repository
 public class UserRepository {
+
     public List<Authorities> getUserAuthorities(String user, String password) {
         List<Authorities> authorities = new ArrayList<>();
         if (user.equals("admin")  && password.equals("admin")) {
