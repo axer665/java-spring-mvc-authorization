@@ -6,7 +6,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: buildOne.Dockerfile
+      dockerfile: buildDev.Dockerfile
 
   prodapp:
     container_name: prodapp_container
@@ -14,4 +14,4 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: buildTwo.Dockerfile
+      dockerfile: buildProd.Dockerfile
