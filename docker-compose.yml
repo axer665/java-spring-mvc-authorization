@@ -1,7 +1,17 @@
 version: '3'
 services:
-  app:
+  devapp:
+    container_name: devapp_container
+    image: devapp
     restart: always
-    build: ./
-    ports:
-      - 80:8080
+    build:
+      context: .
+      dockerfile: buildOne.Dockerfile
+
+  prodapp:
+    container_name: prodapp_container
+    image: prodapp
+    restart: always
+    build:
+      context: .
+      dockerfile: buildTwo.Dockerfile
